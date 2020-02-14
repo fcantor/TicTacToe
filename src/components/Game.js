@@ -12,13 +12,28 @@ export class Game extends Component {
       ]
     }
   }
+  handleClick(i){
+    const history = this.state.history.slice(0, this.state.stepNumber+1); // copy of previous state
+    const current = history[history.length-1];
+    const squares = current.squares.slice(); // copy of squares
+    squares[i] = this.state.xIsNext? 'X':'O';
+
+    //put new history to the current history
+    this.setState({
+      history: history.concat({
+        squares:squares
+      }),
+      xIsNext: !this.state.xIsNext,
+      stepNumber: history.length
+    })
+  }
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     return (
       <div className="game">
         <div className="game-board">
-          <Board onClick={(i)=>this.onClick(i)}
+          <Board onClick={(i)=>this.handleClick(i)}
           squares={current.squares}/>
         </div>
       </div>
