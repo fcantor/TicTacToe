@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Board from './Board';
 
 export class Game extends Component {
   constructor(props){
@@ -12,9 +13,14 @@ export class Game extends Component {
     }
   }
   render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
     return (
-      <div>
-        
+      <div className="game">
+        <div className="game-board">
+          <Board onClick={(i)=>this.onClick(i)}
+          squares={current.squares}/>
+        </div>
       </div>
     );
   }
