@@ -27,4 +27,4 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 ### Author
-Francesca Cantor [Github](https://github.com/fcantor) |[Twitter](https://twitter.com/servomecatnism)| [LinkedIn](https://www.linkedin.com/in/fcantor/)
+Francesca Cantor [Github](https://github.com/fcantor) | [Twitter](https://twitter.com/servomecatnism) | [LinkedIn](https://www.linkedin.com/in/fcantor/)
