@@ -1,5 +1,5 @@
 # TicTacToe
-Just a practice project for React and JS. This is a simple Tic-Tac-Toe
+Just a practice project for React and JS. This is a simple Tic-Tac-Toe game.
 
 ## Available Scripts
 
@@ -25,3 +25,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
+
+### Author
+Francesca Cantor [Github](https://github.com/fcantor)|[Twitter](https://twitter.com/servomecatnism)|[LinkedIn](https://www.linkedin.com/in/fcantor/)
