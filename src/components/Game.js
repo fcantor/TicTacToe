@@ -34,6 +34,14 @@ export class Game extends Component {
       ]
     }
   }
+
+  jumpTo(step) {
+    this.setState({
+      stepNumber: step,
+      xIsNext: (step % 2) === 0
+    })
+  }
+
   handleClick(i){
     const history = this.state.history.slice(0, this.state.stepNumber+1); // copy of previous state
     const current = history[history.length-1];
@@ -53,26 +61,26 @@ export class Game extends Component {
       xIsNext: !this.state.xIsNext,
       stepNumber: history.length
     })
-  }
+  } 
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
     const moves = history.map((step, move) => {
-      const desc = move ? 'Go to #' + move:'Start the Game';
+      const desc = move ? 'Go to step #' + move:'Start the Game';
       return (
         <li key={move}>
           <button onClick={() => {this.jumpTo(move)}}>
             {desc}
           </button>
         </li>
-      )
+    )
     });
     let status;
     if (winner) {
-      status = 'Winner is' + winner;
+      status = 'Winner is ' + winner;
     } else {
-      status = 'Next player is ' + (this.state.xIsNext ? 'X':'0');
+      status = 'Next player is ' + (this.state.xIsNext ? 'X':'O');
     }
 
     return (
@@ -83,7 +91,7 @@ export class Game extends Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <div>{moves}</div>
+          <ul>{moves}</ul>
         </div>
       </div>
     );
